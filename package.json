@@ -1,0 +1,19 @@
+{
+  "name": "gingabulous-core",
+  "version": "0.0.1",
+  "description": "Core module of the Gingabulous frontend library. ",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gingabulous/gingabulous-core.git"
+  },
+  "author": "Joey Hayes <bjoeyhayes@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gingabulous/gingabulous-core/issues"
+  },
+  "homepage": "https://github.com/gingabulous/gingabulous-core#readme"
+}
