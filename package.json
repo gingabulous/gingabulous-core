@@ -21,6 +21,7 @@
     "browser-sync": "^2.18.7",
     "chai": "^3.5.0",
     "del": "^2.2.2",
+    "eslint": "^4.1.1",
     "eslint-config-gingabulous": "0.0.1",
     "gulp": "github:gulpjs/gulp#4.0",
     "gulp-babel": "^6.1.2",
