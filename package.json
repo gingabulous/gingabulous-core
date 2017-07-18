@@ -17,7 +17,8 @@
   },
   "homepage": "https://github.com/gingabulous/gingabulous-core#readme",
   "devDependencies": {
-    "babel-preset-env": "^1.1.8",
+    "babel-cli": "^6.24.1",
+    "babel-preset-env": "^1.6.0",
     "browser-sync": "^2.18.7",
     "chai": "^3.5.0",
     "del": "^2.2.2",
@@ -31,7 +32,7 @@
     "gulp-load-plugins": "^1.5.0",
     "gulp-plumber": "^1.1.0",
     "gulp-rename": "^1.2.2",
-    "gulp-sourcemaps": "^2.4.1",
+    "gulp-sourcemaps": "^2.6.0",
     "mocha": "^3.2.0",
     "sinon": "^2.1.0",
     "sinon-chai": "^2.9.0",
