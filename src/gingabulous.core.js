@@ -1,5 +1,5 @@
 !function() {
-var Gingabulous = {
+const Gingabulous = {
   modules: {},
 
   /**
@@ -20,8 +20,28 @@ var Gingabulous = {
   // _getDataAttr: function(dataAttrName) {
   //   return `data-${dataAttrName}`;
   // },
+  _initModule(module) {
+    const elements = module.jquery ?
+      $(module.dataAttrTarget) :
+      document.querySelectorAll(module.dataAttrTarget);
+    // Look for options set globally
+    const options = module.options || {};
+    if (module.jquery) {
+      elements.each(function() {
+        const $element = $(this);
+        // This might not work... i forgot how to properly jquery...
+        const instance = new Gingabulous[module.name]($element, options);
+        instance.init();
+      });
+    } else {
+      for (let i = 0; i < elements.length; i++) {
+        const instance = new Gingabulous[module.name](elements[i], options);
+        instance.init();
+      }
+    }
+  },
   registerModule: function(module, dataAttrName, jquery = false) {
-    var name = module.prototype.constructor.name;
+    const name = module.prototype.constructor.name;
     // If no value for `dataAttrName` is passed, then assign `name` to the value.
     dataAttrName = dataAttrName || this._hyphenate(name);
     // Add the module to the `modules` object.
@@ -32,7 +52,16 @@ var Gingabulous = {
       jquery:         jquery
     };
     this[name] = module;
+  },
+
+  init: function() {
+    for (let module in this.modules) {
+      if (Object.prototype.hasOwnProperty.call(this.modules, module)) {
+        this._initModule(module);
+      }
+    }
   }
+
 };
 
 window.Gingabulous = Gingabulous;
